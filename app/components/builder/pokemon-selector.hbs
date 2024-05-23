@@ -1,0 +1,12 @@
+<div class="row w-100 h-100">
+  {{#each this.teamSlots as |slot|}}
+    <div class="col-4 h-25">
+
+      <Builder::PokemonSlot
+        @value={{slot}}
+        @options={{this.pokemonList}}
+        @onChange={{this.selectedOption}}
+      />
+    </div>
+  {{/each}}
+</div>

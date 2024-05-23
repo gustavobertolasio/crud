@@ -1,0 +1,11 @@
+<div class="d-flex flex-column w-100 h-100 justify-content-center">
+
+  <select {{on "change" (pick "target.value" @onChange)}} aria-label="">
+    {{#each @options as |theOption|}}
+      <option
+        value={{theOption.id}}
+        selected={{eq theOption @value}}
+      >{{theOption.name}}</option>
+    {{/each}}
+  </select>
+</div>
