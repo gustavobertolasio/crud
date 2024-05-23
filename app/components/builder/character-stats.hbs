@@ -1,5 +1,12 @@
-<div class="h-100 p-2 d-flex flex-column align-items-center">
-  <h4>{{this.character.name}}</h4>
-  Imagem do oswaldo
-  <p>Idade: {{this.character.age}}</p>
+<div class="h-100 p-2 d-flex flex-column align-items-center justify-content-between">
+  <h4>{{this.characterStats.name}}</h4>
+  Imagem do {{this.characterStats.name}}
+  <div class="w-100 d-flex flex-column align-items-center">
+    <p>Idade: {{this.characterStats.age}}</p>
+    <div class="w-100 d-flex justify-content-evenly">
+
+      <button {{on "click" this.deactiveCharacter}} class="btn btn-primary" type="button">Desativar</button>
+      <button {{on "click" this.redirect}} class="btn btn-primary" type="button">Voltar</button>
+    </div>
+  </div>
 </div>

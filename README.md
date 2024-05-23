@@ -1,56 +1,28 @@
 # crud
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Esse projeto foi criado para ser um construtor de times de Pokémon. É possível separar os times por personagens criados e desativar personagens.
 
-## Prerequisites
+Criado em EmberJS 5.8.1 e utiliza Node 18.17.1.
 
-You will need the following things properly installed on your computer.
+Este projeto possui seu backend chamado crud-express.
+
+## Pré-requisitos
+
+Para rodar esse projeto adequadamente, você precisará dos seguintes requisitos instalados em seu computador
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://cli.emberjs.com/release/)
-* [Google Chrome](https://google.com/chrome/)
+* [Crud-express](https://google.com/chrome/)
+* [Docker](https://www.docker.com/get-started/)
 
-## Installation
+## Instalação
 
-* `git clone <repository-url>` this repository
-* `cd crud`
-* `npm install`
+* Clone o repositório com a URL disponível no github;
+* Com o repositório devidamente clonado, rode `npm install` dentro do diretório;
+* Após o término da instalação de dependências, rode `npm start`. A plataforma deverá ficar disponível na url `http://localhost:4200`
 
-## Running / Development
+## Crud-express
 
-* `npm run start`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+A falta do Crud-express não irá impedir a aplicação de abrir. Apenas todas as funcionalidades estarão desabilitadas.
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `npm run test`
-* `npm run test:ember -- --server`
-
-### Linting
-
-* `npm run lint`
-* `npm run lint:fix`
-
-### Building
-
-* `npm exec ember build` (development)
-* `npm run build` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://cli.emberjs.com/release/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)

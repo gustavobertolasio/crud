@@ -1,11 +1,15 @@
-<div class="d-flex flex-column w-100 h-100 justify-content-center">
+<div class="d-flex flex-column w-100 h-100 justify-content-center align-items-center">
 
-  <select {{on "change" (pick "target.value" @onChange)}} aria-label="">
+  <select class="form-select" {{on "change" (pick "target" @onChange)}} aria-label="Escolha um pokemon" name={{@slot-id}}>
     {{#each @options as |theOption|}}
       <option
         value={{theOption.id}}
-        selected={{eq theOption @value}}
+        selected={{eq theOption.id @value}}
       >{{theOption.name}}</option>
     {{/each}}
   </select>
+
+  {{#if @value}}
+    <img class="pt-1 w-75 h-50" src={{concat 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' @value ".png"}} alt=""/>
+  {{/if}}
 </div>

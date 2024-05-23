@@ -7,6 +7,6 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('builder', { path: '/montar-time' });
+  this.route('builder', { path: '/:characterId/montar-time' });
   this.route('character', { path: '/criar-personagem' });
 });

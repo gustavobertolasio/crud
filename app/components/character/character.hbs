@@ -1,42 +1,27 @@
 <div class="d-flex flex-column w-100">
   {{#if this.isFirstStep}}
-    <div>
-      <h3>Qual seu nome?</h3>
-
-      <div class="d-flex justify-content-evenly pt-3">
-        <Input
-          @type="text"
-          @value={{this.form.name}}
-          class="form-control"
-          placeholder="Ash"
-          aria-label="Qual seu nome?"
-        />
-      </div>
-
+  <div>
+    <h3>Qual seu nome?</h3>
+    <div class="d-flex justify-content-evenly pt-3">
+      <Input {{on "change" this.checkValid}} @type="text" @value={{this.form.name}} class="form-control"
+        placeholder="Ash" aria-label="Qual seu nome?" />
     </div>
+
+  </div>
   {{else}}
-    <div>
-      <h3>Qual sua idade</h3>
+  <div>
+    <h3>Qual sua idade</h3>
 
-      <div class="d-flex justify-content-evenly pt-3">
-        <Input
-          @type="number"
-          @value={{this.form.age}}
-          class="form-control"
-          placeholder="12"
-          aria-label="Qual sua idade"
-        />
-      </div>
-
+    <div class="d-flex justify-content-evenly pt-3">
+      <Input {{on "change" this.checkValid}} @type="number" @value={{this.form.age}} class="form-control"
+        placeholder="12" aria-label="Qual sua idade" />
     </div>
+
+  </div>
   {{/if}}
   <div class="d-flex w-100 justify-content-end pt-3">
 
-    <button
-      class="mt-2 btn btn-primary w-25"
-      type="button"
-      onclick={{this.nextStep}}
-    >
+    <button class="mt-2 btn btn-primary w-25" type="button" disabled={{this.buttonDisabled}} onclick={{this.nextStep}}>
       {{this.buttonText}}
     </button>
 

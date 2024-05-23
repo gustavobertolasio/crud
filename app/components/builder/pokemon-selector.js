@@ -1,22 +1,39 @@
 import Component from '@glimmer/component';
+import { service } from '@ember/service';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class BuilderPokemonSelectorComponent extends Component {
-  pokemonList = [
-    { name: 'Bulbasaur', id: 1 },
-    { name: 'Ivysaur', id: 2 },
-    { name: 'Venusaur', id: 3 },
-    { name: 'Charmander', id: 4 },
-    { name: 'Charmeleon', id: 5 },
-    { name: 'Charizard', id: 6 },
-    { name: 'Squirtle', id: 7 },
-    { name: 'Wartortle', id: 8 },
-    { name: 'Blastoise', id: 9 },
-    { name: 'Caterpie', id: 10 },
+  @service router;
+  @service team;
+  @service pokemon;
+
+  @tracked pokemonList = [
+  ];
+  @tracked teamSlots = [
   ];
 
-  teamSlots = [{}, {}, {}, {}, {}, {}];
+  constructor() {
+    super(...arguments);
 
-  selectedOption = (a) => {
-    console.log(a);
+    this.pokemon.getPokemons().then(async res => {
+      this.pokemonList = await res.json();
+    });
+
+    this.getTeam();
+  }
+
+  getTeam() {
+    this.team.getTeam(this.router.currentRoute.params.characterId).then(async res => {
+      this.teamSlots = await res.json();
+    })
+  }
+
+  selectedOption = ({ value: newPokemonId, name: slotId }) => {
+    this.team.changeTeam(this.router.currentRoute.params.characterId, slotId, newPokemonId).then(res => {
+
+      this.getTeam()
+    }
+    );
   };
 }
